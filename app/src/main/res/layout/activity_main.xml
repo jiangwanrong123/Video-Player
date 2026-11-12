@@ -10,6 +10,29 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
+    <!-- 播放/暂停按钮 + 进度条，集成在同一行 -->
+    <LinearLayout
+        android:id="@+id/progressRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnPlayPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="播放" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="1"
+            android:progress="0" />
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/buttonBar"
         android:layout_width="match_parent"
@@ -22,13 +45,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="选择" />
-
-        <Button
-            android:id="@+id/btnPlayPause"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="播放" />
 
         <Button
             android:id="@+id/btnFullscreen"
