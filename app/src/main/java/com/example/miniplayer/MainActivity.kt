@@ -103,15 +103,15 @@ class MainActivity : ComponentActivity() {
             if (isFullscreen) toggleFullscreen()
         }
 
-        videoView.setOnPreparedListener {
+        videoView.setOnPreparedListener { mp ->
+            videoView.syncVideoSize(mp.videoWidth, mp.videoHeight)
             if (pendingPosition > 0) {
-                videoView.seekTo(pendingPosition)
-                pendingPosition = 0
+            videoView.seekTo(pendingPosition)
+            pendingPosition = 0
             }
-            // 视频尺寸就绪后重新测量，让全屏铺满立刻生效
-            videoView.requestLayout()
-        }
+         }
 
+        
         videoView.setOnCompletionListener {
             btnPlayPause.text = "播放"
             seekBar.progress = 0
