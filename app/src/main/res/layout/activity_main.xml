@@ -4,13 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <VideoView
-        android:id="@+id/videoView"
+    <FrameLayout
+        android:id="@+id/videoContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1">
 
-    <!-- 播放/暂停按钮 + 进度条，集成在同一行 -->
+        <com.example.miniplayer.CropVideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
     <LinearLayout
         android:id="@+id/progressRow"
         android:layout_width="match_parent"
